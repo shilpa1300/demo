@@ -40,8 +40,8 @@ const addProduct = async (req, res) => {
 // 2. get all products
 
 const getAllProducts = async (req, res) => {
-  let products = await Product.findAll({ include: ["categories"] });
-  res.status(200).send(products);
+  let result= await Product.findAll({ include: ["categories"] });
+  res.status(200).send(result);
 };
 
 // 3. get single product
