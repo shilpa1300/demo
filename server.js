@@ -9,7 +9,7 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
-const db = require("../Demo/models")
+const db = require("./models")
 
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -23,8 +23,8 @@ app.get("/", (req, res) => {
 });
 
 // routes
-require('../Demo/routes/auth.routes')(app);
-require('../Demo/routes/user.routes')(app);
+require('./routes/auth.routes')(app);
+require('./routes/user.routes')(app);
 
 // routers
 const router = require('./routes/productRouter.js')
